@@ -22,14 +22,22 @@ public class Main {
         int lowestTemp = 25;
         int highestTemp = isSummer ? 45 : 35;
 
-        return temp < highestTemp && temp > lowestTemp;
+        return temp >= lowestTemp && temp <= highestTemp;
     }
 
     public static double area(double width, double height) {
-
+        if (width < 0 || height < 0) {
+            return -1;
+        }
+        return width * height;
     }
 
     public static double area(double radius) {
+    if (radius < 0) {
+        return -1;
+    } else {
+        return radius*radius*Math.PI;
+    }
 
     }
 }
